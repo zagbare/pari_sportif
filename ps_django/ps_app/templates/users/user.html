@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}ps_app' er - user{% endblock %}
+{% block content  %}
+    <div id="PartUser">
+        <header>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                    <h6>TABLEAU DE BORD</h6>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align: right">
+                    <p>{{ user.name }} {{ user.lastname }}</p>
+                </div>
+            </div>
+        </header>
+        <h3>Mes paries </h3>
+        <section class="container">
+        <div class="table-wrapper">
+      <!--Table-->
+      <table class="table table-hover mb-0 table-striped table-bordered">
+
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th class="th-lg">
+              <a> Equipe A
+              </a>
+            </th>
+            <th class="th-lg">
+              <a> Score A
+              </a>
+            </th>
+            <th class="th-lg">
+              <a> Score B
+              </a>
+            </th>
+            <th class="th-lg">
+              <a> Equipe B
+              </a>
+            </th>
+            <th class="th-lg">
+              <a> montant_parié
+              </a>
+            </th>
+            <th class="th-lg">
+              <a> date_du_match
+              </a>
+            </th>
+              <th class="th-lg">
+              <a> date_du_parie
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+        {% for el in paries %}
+            {% if el.id_user_id == user.id %}
+              <tr>
+                <td>{{el.equipeA}}</td>
+                <td>{{ el.score }}</td>
+                <td>{{ el.scoreB }}</td>
+                <td>{{ el.equipeB }}</td>
+                <td>{{ el.montant_parié }}</td>
+                <td>{{ el.date_match }}</td>
+                <td>{{ el.date_parie }}</td>
+              </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+
+  </div>
+</section>
+</div>
+<!-- Table with panel →
+    </div>
+{% endblock %}

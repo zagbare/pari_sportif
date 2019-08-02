@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>ZAGBARE_SCORE PRORAMME</title>
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div id="football">
+      <nav class="navbar navbar-expand-md navbar-light white">
+        <a href="" class="navbar-brand">
+            <p><span class="c1">ZAGBARE_SCORE</span> </p>
+        </a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Accueil</a></li>
+            <li class="nav-item">
+                <a href="{% url 'live' %}" class="nav-link">Live</a></li>
+            <li class="nav-item active">
+                <a href="#" class="nav-link">Matchs</a></li>
+        </ul>
+        {% if isConnect%}
+            <div class="connecter">
+               <h6> <i class="fas fa-user"></i> {{ user.name }} {{ user.lastname }}</h6>
+            </div>
+        {% else %}
+             <div class="actions">
+                <a href="{% url 'register' %}"><i class="fas fa-basketball-ball"></i> Inscription </a>
+                <a data-toggle="modal" data-target="#modalconnexion"><i class="fas fa-basketball-ball"></i> Connexion </a>
+            </div>
+        {% endif %}
+    </nav>
+    <div class="user-options">
+                    <ul class="myul">
+                        <li><a href="{% url 'PartUser' %}"> MES JEUX </a></li>
+                        <li><a href="{% url 'logout' %}"> DECONNECTION </a></li>
+                    </ul>
+    </div>
+
+    <section class="big_content">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                <div class="content demain">
+                    <nav class="navbar navbar-expand-sm">
+                          <ul class="nav navbar-nav">
+                            <li class="nav-item "><a href="{% url 'football' %}" class="nav-link">Hier</a></li>
+                            <li class="nav-item"><a href="{% url 'football_today' %}" class="nav-link">Aujourd'hui</a></li>
+                            <li class="nav-item active"><a href="#" class="nav-link">Demain</a></li>
+                        </ul>
+                    </nav>
+                     <h6>Les Matchs  de {{ date }}</h6>
+                     <div class="row">
+                        {% for inf in donne %}
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="block">
+                                <p> Heure  : {{ inf.heure }}</p>
+                                <h5> {{inf.eq1}} - {{ inf.eq2 }}</h5>
+                                 {% if isConnect %}
+                                   <form method="post" action="{% url 'parie' %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="eqa" value="{{ inf.eq1 }}">
+                                        <input type="hidden" name="eqb" value="{{ inf.eq2 }}">
+                                        <input type="hidden" name="date_match" value="{{ date2 }}">
+                                        <button class="btn btn-elegant" type="submit" name="parie">je parie</button>
+                                    </form>
+                                {% else %}
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalconnexion">je parie</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="card">
+                      {% if isConnect %}
+                        <div class="card-body">
+                             <h5 class="card-title">vos paries du {{ date }}</h5>
+                            {% for parie in paries %}
+                                {% if parie.v_date_match == date2 and parie.id_user_id == user.id %}
+                                    <p class="card-text">{{ parie.equipeA }} {{ parie.score }} - {{ parie.scoreB }} {{ parie.equipeB }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                      {% else %}
+                          <div class="card-body">
+                             <h5 class="card-title">misez </h5>
+      
+                        </div>
+                      {% endif %}
+                </div>
+                 <div class="card">
+                    <div class="card-body">
+                         <h5 class="card-title">DIRECT </h5>
+                        <a href="{% url 'football_today' %}" class="card-link">allez-y</a>
+                    </div>
+                 </div>
+                 <div class="card">
+                    <div class="card-body">
+                         <h5 class="card-title">résultats matchs d'hier</h5>
+                        <p class="card-text">consultez les matchs d'hier</p>
+                        <a href="{% url 'football' %}" class="card-link">voir</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                         <h5 class="card-title">equipe preferer</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="modal fade" id="modalconnexion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-avatar modal-primary" role="log">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading text-center ">allez-y</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+          <form action="{% url 'football_demain' %}" method="post">
+                    {% csrf_token %}
+                    <div class="md-form form1">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input type="email" id="inputIconEx1" name="email" class="form-control" required>
+                      <label for="inputIconEx1">Email</label>
+                    </div>
+                    <div class="md-form form2">
+                      <i class="fas fa-key prefix"></i>
+                      <input type="password" id="inputIconEx2" name="password" class="form-control" required>
+                      <label for="inputIconEx2">Mot de passe</label>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-success"><i class="fas fa-user-check"></i> connexion</button>
+                </form>
+      </div>
+    <!--/.Content-->
+  </div>
+</div>
+</div>
+
+
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Erreur</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-times-circle fa-4x animated rotateIn"></i>
+          <br>
+        <p>vous n'etes pas inscript </p>
+      </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
+        </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+
+
+
+  <!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h1><span class="c1">ZAGBARE_SCORE</span></h1>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Article</h6>
+        <p>
+          <a href="#!">DIRECT</a>
+        </p>
+        <p>
+          <a href="#!">RESULTATS</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+    </div>
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8">
+
+        <!--Copyright-->
+        <p class="text-center text-md-left">© 2019 Copyright,
+          <a href="#">
+            <strong> ZAGBARE_SCORE</strong>
+          </a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+    {% if isNotUser %}
+        <script>
+        $(()=> {
+            $('#modalError').modal('show').delay(2000).modal('close');
+        });
+        </script>
+    {% else %}
+        <script src="{% static 'js/script.js' %}"></script>
+    {% endif %}
+</body>
+
+</html>

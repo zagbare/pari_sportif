@@ -1,0 +1,688 @@
+.navbar {
+   background-color: #45526e !important;
+    width: 100%;
+}
+
+.navbar .navbar-brand {
+    margin-bottom: -15px;
+}
+
+.navbar .navbar-brand p {
+    font-size: 18px;
+}
+
+.navbar .navbar-brand .c2 {
+    display: inline-block;
+    color: white;
+    background: black;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.navbar .navbar-brand .c1 {
+    display: inline-block;
+    color: darkred;
+    background: white;
+    font-weight: bolder;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.navbar ul {
+    margin: 0 200px;
+}
+
+.navbar .actions {
+    margin-right: -100px !important;
+}
+
+.navbar .actions a:nth-child(1) i {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar .actions a:nth-child(1) {
+    border: 1px solid lime;
+    color: white;
+    background: lime;
+    padding: 7px;
+    font-weight: bolder;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.navbar .actions a:nth-child(1):hover {
+    background: green;
+    border: 1px solid green;
+}
+
+.navbar .actions a:nth-child(2) i {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar .actions a:nth-child(2) {
+    border: 1px solid red;
+    color: white;
+    background: red;
+    padding: 7px;
+    font-weight: bolder;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.navbar .actions a:nth-child(2):hover {
+    background: darkred;
+    border: 1px solid darkred;
+}
+
+.navbar ul li.active>a {
+    border-radius: 5px;
+    background: rgb(36, 35, 35) !important;
+}
+
+.navbar ul li a {
+    color: white !important;
+    font-weight: bolder;
+    font-size: 18px;
+    font-family: Bell MT;
+    margin: 0 20px;
+}
+.navbar ul li a:hover{
+     border-radius: 5px;
+    background: rgb(36, 35, 35) !important;
+}
+
+
+/* page d'index */
+#index h1{
+    text-align: center;
+    margin-top: 70px;
+}
+#index h1 .c1 {
+    background: white;
+    color: darkred;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#index h1 .c2 {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+#index #moncarousel .carousel-item .slid1{
+    margin-bottom: 3%;
+    text-align: left;
+    margin-left: -10%;
+}
+#index #moncarousel .slid2{
+    margin-bottom: 3%;
+    text-align: left;
+    margin-left: -10%;
+}
+#index #moncarousel .slid3{
+    margin-bottom: 3%;
+    text-align: left;
+    margin-left: -10%;
+}
+#index #moncarousel .slid1 h3 .c1 {
+    background: white;
+    color: darkred;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#index #moncarousel .slid1 h3 .c2 {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    text-align: left;
+}
+#index #moncarousel .slid1 p{
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: Times;
+    color:  lightgoldenrodyellow;
+    margin-top: 30px;
+}
+
+#index #moncarousel .slid2 h4{
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: Times;
+}
+#index #moncarousel .slid3 h4{
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: Times;
+}
+
+.connecter h6{
+    color: white;
+    font-weight: bolder !important;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    z-index: 99999,
+}
+.actions{
+    position: absolute;
+    top: 15%;
+    right: 8%;
+    z-index: 99999;
+}
+.connecter h6 i{
+    color: #444;
+    background: white;
+    padding: 15px;
+    border-radius: 50px;
+    margin: 5px;
+}
+.user-options{
+    position: fixed;
+    z-index: 99999;
+    top: 15%;
+    right:8%;
+    display: none;
+    opacity: 0;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: white;
+    color: #444;
+    width: 200px;
+    text-algn: left;
+    height: 100px;
+}
+.user-options ul.myul{
+    margin-lef: -50px !important;
+    margin-top: 20px;
+}
+.user-options ul.myul li{
+    list-style-type: none;
+    text-align: left;
+}
+.user-optins ul.myul li a{
+    color: black;
+    font-size: 12px;
+}
+#index .secondContent{
+    margin-top: 10px;
+}
+#index .secondContent .block{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+#index .secondContent .block:hover{
+    transform: skewX(-10deg);
+    transform: rotateZ(7deg);
+}
+#index .secondContent .block h6{
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
+#index .secondContent p{
+    font-size: 14px;
+}
+#index .big_content{
+    margin-top: 30px;
+}
+#index .big_content .card{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 1px solid navy;
+}
+#index .big_content .card h5{
+    font-weight: bolder;
+}
+#index .big_content .card a{
+    color: darkred;
+    font-weight: bolder;
+}
+
+/* page register */
+#register{
+    display: none;
+}
+#register h1{
+    text-align: center;
+    margin-top: -20px;
+    opacity: 0;
+}
+#register h1 .c1 {
+    background: white;
+    color: darkred;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#register h1 .c2 {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 0px;
+    text-align: left;
+}
+#register h1 .texte{
+    font-size: 60px !important;
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: bolder !important;
+}
+#register p{
+    text-align: center;
+}
+
+#register form {
+    padding: 50px;
+    border: 1px solid black;
+    margin-left: -200px;
+    text-align: center;
+    opacity: 0;
+}
+#register form  .error{
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 16px;
+    display: none;
+    opacity: 0;
+}
+#register form .md-form{
+    text-align: left;
+    opacity: 0;
+}
+#register form button[type="reset"]{
+    background: none !important;
+    border: none;
+    margin: 0 auto;
+    margin-top: -60px;
+    box-shadow: none;
+}
+#register a.home{
+    display: block;
+    text-align: center;
+}
+#register a.home i{
+    background: none !important;
+    display: inline-block;
+    border: 1px solid lime;
+    text-align: center;
+    color: lime;
+    padding: 15px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+#register form button[type="reset"] i{
+    background: none !important;
+    display: inline-block;
+    border: 1px solid #444;
+    color: #444;
+    padding: 15px;
+    border-radius: 50px;
+
+    margin-bottom: 30px;
+    opacity: 0;
+}
+
+#register form button[type="submit"]{
+    opacity: 0;
+}
+
+
+/* page login */
+#login{
+    display: none;
+}
+#login h1{
+    text-align: center;
+    margin-top: -20px;
+    opacity: 0;
+}
+#login h1 .c1 {
+    background: white;
+    color: darkred;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#login h1 .c2 {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 0px;
+    text-align: left;
+}
+#login h1 .texte{
+    font-size: 60px !important;
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: bolder !important;
+}
+#login p{
+    text-align: center;
+}
+
+#login form {
+    padding: 50px;
+    border: 1px solid black;
+    text-align: center;
+    margin-left: -200px;
+    opacity: 0;
+}
+#login a.home{
+    display: block;
+    text-align: center;
+}
+#login a.home i{
+    background: none !important;
+    display: inline-block;
+    border: 1px solid lime;
+    color: lime;
+    padding: 15px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+#login form button[type="reset"]{
+    background: none !important;
+    border: none;
+    margin-top: -60px;
+    box-shadow: none;
+}
+#login form .md-form{
+    text-align: left;
+    opacity: 0;
+}
+#login form button[type="submit"]{
+    opacity: 0;
+}
+/* partUser */
+
+#PartUser header{
+    border: 1px solid black;
+    padding: 12px;
+    padding-top: 25px;
+}
+#PartUser h3{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+#PartUser h6{
+    font-weight: bolder !important;
+}
+#PartUser table thead{
+    background: navy;
+    text-align: center;
+}
+
+#PartUser table thead th a{
+    color: white !important;
+    text-align: center !important;
+}
+/* page live */
+#live .big_content{
+    margin-top: 30px;
+}
+#live .big_content .card{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 1px solid navy;
+}
+#live .big_content .card h5{
+    font-weight: bolder;
+}
+#live .big_content .card a{
+    color: darkred;
+    font-weight: bolder;
+}
+
+#live .big_content .block{
+    border: 1px solid black;
+    background: black;
+    color: white;
+    font-weight: bolder;
+    margin: 7px;
+    padding: 10px;
+}
+
+#live .big_content .block button{
+    margin: 0 auto;
+    text-align:center;
+}
+
+/* page football */
+#football .big_content{
+    margin-top: 30px;
+}
+#football .big_content .card{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 1px solid navy;
+}
+#football .big_content .card h5{
+    font-weight: bolder;
+}
+#football .big_content .card a{
+    color: darkred;
+    font-weight: bolder;
+}
+#football .big_content .navbar{
+    background: black !important;
+    margin-top: -30px;
+}
+#football .big_content .navbar ul li.active>a{
+    background: darkgreen !important;
+}
+#football .big_content .navbar ul li a:hover{
+    background: darkgreen !important;
+}
+
+/* football_hier */
+#football .big_content .hier h6{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background: navy;
+    padding: 5px;
+    color: white !important;
+}
+#football .big_content .hier .block{
+    background: ghostwhite;
+    padding: 15px;
+    margin: 7px;
+    border-radius: 25px;
+    height: 140px;
+    border: 1px solid navy;
+}
+
+/* football_demain */
+#football .big_content .demain h6{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background: navy;
+    padding: 5px;
+    color: white !important;
+}
+#football .big_content .demain .block{
+    background: ghostwhite;
+    padding: 15px;
+    margin: 7px;
+    border-radius: 25px;
+    height: 170px;
+    border: 1px solid navy;
+}
+
+/* football_today */
+#football .big_content .today h6{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background: navy;
+    padding: 5px;
+    color: white !important;
+}
+#football .big_content .today .block{
+    background: ghostwhite;
+    padding: 15px;
+    margin: 7px;
+    border-radius: 25px;
+    height: 170px;
+    border: 1px solid navy;
+}
+
+
+
+
+/* page basketball */
+#basketball .big_content{
+    margin-top: 30px;
+}
+#basketball .big_content .card{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 1px solid navy;
+}
+#basketball .big_content .card h5{
+    font-weight: bolder;
+}
+#basketball .big_content .card a{
+    color: darkred;
+    font-weight: bolder;
+}
+
+/* page de parie */
+#parie .connecter{
+    position: absolute;
+    top: 5%;
+    right: 7%;
+    z-index: 9999;
+}
+#parie .big_content{
+    margin-top: 50px;
+}
+#parie .big_content  .card{
+    margin-bottom: 25px;
+    border: 1px solid navy;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+#parie .big_content .card .card-title{
+    text-align: center;
+}
+
+#parie .big_content form{
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+        border: 1px solid navy;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+#parie .big_content form:hover{
+    box-shadow: 20px 20px 80px black;
+
+}
+
+#parie .big_content form input[name="scoreA"],#parie .big_content form input[name="scoreB"]{
+    width: 30px;
+    font-size: 16px;
+    color: grey;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 2px;
+}
+#parie .big_content form input[name="prix_parie"]{
+    color: grey;
+    font-size: 16px
+    padding: 2px;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+#parie .big_content form input:focus{
+    -moz-box-shadow: none;
+    border: none;
+}
+footer {
+    background: #444;
+    padding: 40px;
+    margin-top: 50px;
+    padding-bottom: 5px;
+}
+
+footer .c1 {
+    background: white;
+    color: darkred;
+    padding: 10px;
+    font-weight: bolder;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+footer .c2 {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+footer .text{
+    margin-top: 40px;
+}

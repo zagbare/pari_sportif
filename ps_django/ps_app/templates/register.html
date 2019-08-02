@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>ZAGBARE_SCORE</title>
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div id="register">
+    <h1> <span class="c1">ZAGBARE_SCORE<span class="barre">|</span> <span class="texte">Inscription</span></h1>
+    <br><br>
+                      <a href="{% url 'home' %}" class="home"><i class="fas fa-home"></i></a>
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6 offset-md-3 col-md-6 offset-sm-2 col-sm-8 col-xs-12">
+                <form action="{% url 'register' %}" method="post">
+                    {%  csrf_token %}
+                    <p class="error">ERREUR</p>
+                    <div class="md-form form1">
+                      <i class="fas fa-user prefix"></i>
+                      <input type="text" id="inputIconEx1" name="name" class="form-control" required>
+                      <label for="inputIconEx1">Nom</label>
+                    </div>
+                    <div class="md-form form2">
+                      <i class="fas fa-user prefix"></i>
+                      <input type="text" id="inputIconEx2" name="lastname" class="form-control" required>
+                      <label for="inputIconEx2">Prénom</label>
+                    </div>
+                    <div class="md-form form3">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input type="email" id="inputIconEx3" name="email" class="form-control" required>
+                      <label for="inputIconEx3">Email</label>
+                    </div>
+                    <div class="md-form form4">
+                      <i class="fas fa-phone prefix"></i>
+                      <input type="tel" id="inputIconEx4" name="numberphone" class="form-control" required>
+                      <label for="inputIconEx4">Numéro de téléphone</label>
+                    </div>
+                    <div class="md-form form5">
+                      <i class="fas fa-key prefix"></i>
+                      <input type="password" id="inputIconEx5" name="ps1"class="form-control" required>
+                      <label for="inputIconEx5">Mot de passe</label>
+                    </div>
+                    <div class="md-form form6">
+                      <i class="fas fa-key prefix"></i>
+                      <input type="password" id="inputIconEx6" name="ps2" class="form-control" required>
+                      <label for="inputIconEx6">confirmer mot de passe</label>
+                    </div>
+                    <input type="hidden" name="status" value="False">
+                    <button type="submit" name="register" class="btn btn-success">soumettre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="modalSuccessInscript" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Succès</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-check fa-4x animated rotateIn"></i>
+          <br>
+        <p>Inscription effectué avec succès</p>
+          <br>
+          <a href="{% url 'login' %}" class="btn btn-blue waves-effect">connectez-vous</a>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">fermer</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+     <!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h1><span class="c1">ZAGBARE_SCORE</span></h1>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Article</h6>
+        <p>
+          <a href="#!">DIRECT</a>
+        </p>
+        <p>
+          <a href="#!">RESULTATS</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+
+    </div>
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8">
+
+        <!--Copyright-->
+        <p class="text-center text-md-left">© 2019 Copyright,
+          <a href="#">
+            <strong> ZAGBARE_SCORE </strong>
+          </a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+    {% if verif %}
+        <script>
+        $(()=> {
+            $('#register').show();
+            $('#register h1').animate({
+                'margin-top': '50px',
+                'opacity': '1'
+            }, 5);
+            $('#register form').animate({
+                'margin-left': '0px',
+                'opacity': '1'
+            }, 5)
+            $('#register form .md-form').animate({
+                'opacity': '1'
+            }, 5);
+            $('#register form button[type="submit"]').animate({'opacity': '1'}, 5);
+            $('#modalSuccessInscript').modal('show');
+        });
+        </script>
+    {% else %}
+        <script src="{% static 'js/script.js' %}"></script>
+    {% endif %}
+</body>
+
+</html>
